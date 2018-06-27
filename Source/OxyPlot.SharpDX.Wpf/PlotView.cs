@@ -353,24 +353,24 @@ namespace OxyPlot.SharpDX.Wpf
         /// <param name="update">if set to <c>true</c>, the data collections will be updated.</param>
         public void InvalidatePlot(bool update = true)
         {
-            this.UpdateModel(update);
-            if (this.plotImage != null)
-            {
-                this.plotImage.PlotModel = this.ActualModel;
-
-                if (Interlocked.Exchange(ref this.invalidated, 1) == 1)
+            this.Dispatcher.InvokeAsync(
+                () =>
                 {
-                    return;
-                }
-
-                this.Dispatcher.InvokeAsync(
-                    () =>
+                    this.UpdateModel(update);
+                    if (this.plotImage != null)
                     {
+                        this.plotImage.PlotModel = this.ActualModel;
+
+                        if (Interlocked.Exchange(ref this.invalidated, 1) == 1)
+                        {
+                            return;
+                        }
+
                         this.plotImage.Invalidate();
                         this.invalidated = 0;
-                    },
-                    System.Windows.Threading.DispatcherPriority.Background);
-            }
+                    }
+                },
+                System.Windows.Threading.DispatcherPriority.Render);
         }
 
         /// <summary>

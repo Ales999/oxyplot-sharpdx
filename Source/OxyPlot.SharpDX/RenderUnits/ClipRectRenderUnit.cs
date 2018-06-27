@@ -16,7 +16,9 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ClipRectRenderUnit" /> class.
         /// </summary>
-        /// <param name="clipRect">The clipping rect.</param>
+        /// <param name="clipRect">
+        /// The clipping rect.
+        /// </param>
         public ClipRectRenderUnit(RectangleF clipRect)
         {
             this.clipRect = clipRect;
@@ -25,7 +27,8 @@
         /// <summary>
         /// Clips render target to the rect, stored in the current instance.
         /// </summary>
-        /// <param name="renderTarget"></param>
+        /// <param name="renderTarget">
+        /// </param>
         public void Render(RenderTarget renderTarget)
         {
             if (clipRect != RectangleF.Empty)
@@ -41,12 +44,16 @@
         /// <summary>
         /// Checks if current instance bounds intersects with viewport or not.
         /// </summary>
-        /// <param name="viewport">The viewport.</param>
-        /// <returns>Return <c>True</c> if bounds intersects with viewport, otherwise <c>False</c>.</returns>
+        /// <param name="viewport">
+        /// The viewport.
+        /// </param>
+        /// <returns>
+        /// Return <c> True </c> if bounds intersects with viewport, otherwise <c> False </c>.
+        /// </returns>
         public bool CheckBounds(RectangleF viewport)
         {
-            // Clipping operation should always be performed. If it's outside of the viewport it will clip
-            // out the entire scene and therefore should still be applied.
+            // Clipping operation should always be performed. If it's outside of the viewport it will
+            // clip out the entire scene and therefore should still be applied.
             return true;
         }
 
