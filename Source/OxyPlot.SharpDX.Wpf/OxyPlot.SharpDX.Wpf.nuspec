@@ -1,30 +1,29 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>OxyPlot.SharpDX.Wpf</id>
+    <id>TechnikEmpire.OxyPlot.SharpDX.Wpf</id>
     <title>OxyPlot for WPF with SharpDX based renderer</title>
-    <version>$version$</version>
-    <authors>Oystein Bjorke</authors>
+    <version>0.0.3</version>
+    <authors>Oystein Bjorke, TechnikEmpire</authors>
     <description>OxyPlot is a plotting library for .NET. This package targets WPF applications.</description>
-    <releaseNotes></releaseNotes>
-    <licenseUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/master/LICENSE</licenseUrl>
+    <releaseNotes>Properly reference the latest stable release of SharpDX packages.</releaseNotes>
+    <licenseUrl>https://raw.githubusercontent.com/TechnikEmpire/oxyplot-sharpdx/master/LICENSE</licenseUrl>
     <projectUrl>http://oxyplot.org/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/oxyplot/oxyplot/develop/Icons/OxyPlot_128.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>wpf plotting plot charting chart sharpdx</tags>
     <dependencies>
-      <dependency id="OxyPlot.Core" version="[$version$]"/>
-      <dependency id="SharpDX" version="[3.0.2]"/>
-      <dependency id="SharpDX.Direct2D1" version="[3.0.2]"/>
-      <dependency id="SharpDX.Direct3D11" version="[3.0.2]"/>
-      <dependency id="SharpDX.Direct3D9" version="[3.0.2]"/>
-      <dependency id="SharpDX.DXGI" version="[3.0.2]"/>
-      <dependency id="SharpDX.Mathematics" version="[3.0.2]"/>
+      <dependency id="OxyPlot.Core" version="[1.0.0]"/>
+      <dependency id="SharpDX" version="[4.1.0]"/>
+      <dependency id="SharpDX.Direct2D1" version="[4.1.0]"/>
+      <dependency id="SharpDX.Direct3D11" version="[4.1.0]"/>
+      <dependency id="SharpDX.Direct3D9" version="[4.1.0]"/>
+      <dependency id="SharpDX.DXGI" version="[4.1.0]"/>
+      <dependency id="SharpDX.Mathematics" version="[4.1.0]"/>
     </dependencies>
   </metadata>
   <files>
     <file src="bin\Release\OxyPlot.SharpDX.WPF.???" target="lib\net452" />
-
     <file src="..\..\LICENSE" />
     <file src="..\..\CHANGELOG.md" />
   </files>

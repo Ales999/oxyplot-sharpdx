@@ -353,10 +353,11 @@ namespace OxyPlot.SharpDX.Wpf
         /// <param name="update">if set to <c>true</c>, the data collections will be updated.</param>
         public void InvalidatePlot(bool update = true)
         {
+            this.UpdateModel(update);
+
             this.Dispatcher.InvokeAsync(
                 () =>
-                {
-                    this.UpdateModel(update);
+                {   
                     if (this.plotImage != null)
                     {
                         this.plotImage.PlotModel = this.ActualModel;
@@ -370,7 +371,7 @@ namespace OxyPlot.SharpDX.Wpf
                         this.invalidated = 0;
                     }
                 },
-                System.Windows.Threading.DispatcherPriority.Render);
+                System.Windows.Threading.DispatcherPriority.Normal);
         }
 
         /// <summary>
